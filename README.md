@@ -13,11 +13,11 @@ I want to expose a set of techniques I found out while learning Data Science thr
 
 ### Ideas
 
-[x] Create date column in dataset generation
-[ ] Create email column in dataset generation
-[ ] Create useless column in dataset generation
-[ ] Generate random unwanted values in date column
-[ ] Generate random unwanted values in email column
-[x] Generate null values in date column
-[ ] Generate null values in email column
-[ ] Illustrate useless column deletion
+- [x] Create date column in dataset generation
+- [ ] Create email column in dataset generation
+- [ ] Create useless column in dataset generation
+- [ ] Generate random unwanted values in date column
+- [ ] Generate random unwanted values in email column
+- [x] Generate null values in date column
+- [ ] Generate null values in email column
+- [ ] Illustrate useless column deletion
