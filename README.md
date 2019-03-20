@@ -19,21 +19,21 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
    - Normal data
      - [ ] Create name column
      - [ ] Create missing column
-     - [ ] Create category column
+     - [x] Create category column
      - [x] Create height column
      - [ ] Create salary column
      - [x] Create date column
-     - [ ] Create country column
+     - [x] Create country column
      - [ ] Create email column
      - [x] Create useless column
    - Errors introduction
      - [ ] Generate null values in name column (`useless_observation_deletion`)
      - [ ] Generate lots of missing values in missing column (`useless_feature_deletion`)
-     - [ ] Generate null values in category column (`missing_value_as_special_category`)
+     - [x] Generate null values in category column (`missing_value_as_special_category`)
      - [x] Generate null values in height column (`mean_value_filling`)
      - [ ] Generate null values in very heterogeneous salary column (`median_value_filling`)
      - [ ] Generate strangely formatted values in date column (`good_format_spelling_correction`)
-     - [ ] Generate miswritten country names in country column (`known_value_spelling_correction`)
+     - [x] Generate miswritten country names in country column (`known_value_spelling_correction`)
      - [ ] Generate strange email suffixes in email column (`strange_observation_deletion`)
      - [x] Generate randomly generated text sequence in useless column (`strange_feature_deletion`)
 2. Handling missing values  
