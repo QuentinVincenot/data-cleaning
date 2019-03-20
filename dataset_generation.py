@@ -4,10 +4,15 @@ import string
 
 def generate_dataset():
 	dataframe = pd.DataFrame()
+	generate_height_column(dataframe)
+	introduce_error_height_NaN(dataframe)
 	generate_dates_column(dataframe)
 	introduce_error_dates_NaN(dataframe)
 	generate_useless_column(dataframe)
 	return dataframe
+
+def generate_height_column(dataframe):
+	dataframe["Height"] = np.round(np.random.uniform(low=1.45, high=2.10, size=50), 2)
 
 def generate_dates_column(dataframe):
 	dataframe["Date"] = np.random.randint(low=1950, high=2020, size=50)
