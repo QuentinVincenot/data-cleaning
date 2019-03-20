@@ -6,16 +6,21 @@ def generate_dataset():
 	dataframe = pd.DataFrame()
 	generate_height_column(dataframe)
 	introduce_error_height_NaN(dataframe)
-	generate_dates_column(dataframe)
-	introduce_error_dates_NaN(dataframe)
+	generate_date_column(dataframe)
+	introduce_error_date_NaN(dataframe)
+	countries, probas = introduce_error_country(dataframe)
+	generate_country_column(dataframe, countries, probas)
 	generate_useless_column(dataframe)
 	return dataframe
 
 def generate_height_column(dataframe):
 	dataframe["Height"] = np.round(np.random.uniform(low=1.45, high=2.10, size=50), 2)
 
-def generate_dates_column(dataframe):
+def generate_date_column(dataframe):
 	dataframe["Date"] = np.random.randint(low=1950, high=2020, size=50)
+
+def generate_country_column(dataframe, countries, probas):
+	dataframe["Country"] = np.random.choice(countries, 50, p=probas)
 
 def generate_useless_column(dataframe):
 	useless_data_array = []
