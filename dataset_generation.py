@@ -4,6 +4,8 @@ import string
 
 def generate_dataset():
 	dataframe = pd.DataFrame()
+	generate_missing_column(dataframe)
+	introduce_error_missing_NaN(dataframe)
 	generate_category_column(dataframe)
 	introduce_error_category_NaN(dataframe)
 	generate_height_column(dataframe)
@@ -16,6 +18,9 @@ def generate_dataset():
 	generate_email_column(dataframe, suffixes, probas)
 	generate_useless_column(dataframe)
 	return dataframe
+
+def generate_missing_column(dataframe):
+	dataframe["Missing"] = np.random.randint(low=0, high=100, size=50)
 
 def generate_category_column(dataframe):
 	dataframe["Category"] = np.random.choice(['Classic', 'Regular', 'Special'], 50)

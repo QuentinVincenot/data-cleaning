@@ -18,7 +18,7 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
 1. Dataset generation
    - Normal data
      - [ ] Create name column
-     - [ ] Create missing column
+     - [x] Create missing column
      - [x] Create category column
      - [x] Create height column
      - [ ] Create salary column
@@ -28,7 +28,7 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
      - [x] Create useless column
    - Errors introduction
      - [ ] Generate null values in name column (`useless_observation_deletion`)
-     - [ ] Generate lots of missing values in missing column (`useless_feature_deletion`)
+     - [x] Generate lots of missing values in missing column (`useless_feature_deletion`)
      - [x] Generate null values in category column (`missing_value_as_special_category`)
      - [x] Generate null values in height column (`mean_value_filling`)
      - [ ] Generate null values in very heterogeneous salary column (`median_value_filling`)
