@@ -10,8 +10,10 @@ def generate_dataset():
 	introduce_error_height_NaN(dataframe)
 	generate_date_column(dataframe)
 	introduce_error_date_NaN(dataframe)
-	countries, probas = introduce_error_country(dataframe)
+	countries, probas = introduce_error_country()
 	generate_country_column(dataframe, countries, probas)
+	suffixes, probas = introduce_error_email()
+	generate_email_column(dataframe, suffixes, probas)
 	generate_useless_column(dataframe)
 	return dataframe
 
@@ -26,6 +28,16 @@ def generate_date_column(dataframe):
 
 def generate_country_column(dataframe, countries, probas):
 	dataframe["Country"] = np.random.choice(countries, 50, p=probas)
+
+def generate_email_column(dataframe, suffixes, probas):
+	email_data_array = []
+	for row in range(50):
+		first_part = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(5)])
+		second_part = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(5)])
+		extension = ''.join(np.random.choice(suffixes, 1, p=probas))
+		random_data = '{}.{}{}'.format(first_part, second_part, extension)
+		email_data_array += [random_data]
+	dataframe["Email"] = email_data_array
 
 def generate_useless_column(dataframe):
 	useless_data_array = []

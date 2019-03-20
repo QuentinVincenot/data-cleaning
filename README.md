@@ -24,7 +24,7 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
      - [ ] Create salary column
      - [x] Create date column
      - [x] Create country column
-     - [ ] Create email column
+     - [x] Create email column
      - [x] Create useless column
    - Errors introduction
      - [ ] Generate null values in name column (`useless_observation_deletion`)
@@ -34,7 +34,7 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
      - [ ] Generate null values in very heterogeneous salary column (`median_value_filling`)
      - [ ] Generate strangely formatted values in date column (`good_format_spelling_correction`)
      - [x] Generate miswritten country names in country column (`known_value_spelling_correction`)
-     - [ ] Generate strange email suffixes in email column (`strange_observation_deletion`)
+     - [x] Generate strange email suffixes in email column (`strange_observation_deletion`)
      - [x] Generate randomly generated text sequence in useless column (`strange_feature_deletion`)
 2. Handling missing values  
    - Deletion
