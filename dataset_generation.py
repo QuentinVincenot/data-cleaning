@@ -7,9 +7,11 @@ def generate_dataset():
 	generate_missing_column(dataframe)
 	introduce_error_missing_NaN(dataframe)
 	generate_category_column(dataframe)
-	introduce_error_category_NaN(dataframe)
+	introduce_error_category_null_values(dataframe)
 	generate_height_column(dataframe)
 	introduce_error_height_NaN(dataframe)
+	generate_salary_column(dataframe)
+	introduce_error_salary_heterogeneous(dataframe)
 	generate_date_column(dataframe)
 	introduce_error_date_NaN(dataframe)
 	countries, probas = introduce_error_country()
@@ -27,6 +29,9 @@ def generate_category_column(dataframe):
 
 def generate_height_column(dataframe):
 	dataframe["Height"] = np.round(np.random.uniform(low=1.45, high=2.10, size=50), 2)
+
+def generate_salary_column(dataframe):
+	dataframe["Salary"] = np.multiply(1000, np.random.randint(low=30, high=145, size=50))
 
 def generate_date_column(dataframe):
 	dataframe["Date"] = np.random.randint(low=1950, high=2020, size=50)

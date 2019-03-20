@@ -3,20 +3,24 @@ import numpy as np
 
 def introduce_error_missing_NaN(dataframe):
 	errors_indices = np.random.choice(50, 38, replace=False)
-	dataframe.iloc[errors_indices, [0]] = np.nan
+	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Missing')]] = np.nan
 
-def introduce_error_category_NaN(dataframe):
+def introduce_error_category_null_values(dataframe):
 	errors_indices = np.random.choice(50, 12, replace=False)
 	for index in errors_indices:
-		dataframe.iloc[index, [1]] = np.random.choice(['NaN', 'null', '???', 'UNKWN'], 1, p=[0.25, 0.25, 0.25, 0.25])
+		dataframe.iloc[index, [dataframe.columns.get_loc('Category')]] = np.random.choice(['NaN', 'null', '???', 'UNKWN'], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
 
 def introduce_error_height_NaN(dataframe):
 	errors_indices = np.random.choice(50, 7, replace=False)
-	dataframe.iloc[errors_indices, [2]] = np.nan
+	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Height')]] = np.nan
+
+def introduce_error_salary_heterogeneous(dataframe):
+	errors_indices = np.random.choice(50, 3, replace=False)
+	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Salary')]] = np.multiply(1000, np.random.randint(low=450, high=500, size=3))
 
 def introduce_error_date_NaN(dataframe):
 	errors_indices = np.random.choice(50, 5, replace=False)
-	dataframe.iloc[errors_indices, [3]] = np.nan
+	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Date')]] = np.nan
 
 def introduce_error_country():
 	possible_countries = ['USA', 'uSa', 'Brasil', 'brUsil', 'France', 'Fr', 'South Africa', 'SAF', 'China', 'CHinA']
