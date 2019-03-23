@@ -16,9 +16,13 @@ As you can see in this portion of the dataset, there are simply a lot of problem
 
 My Data Cleaning pipeline will consist in a tenth or less steps to mainly : delete useless observations or features, consider missing values differently, fill numerical features with the mean or the median of the corresponding feature, correct spelling mistakes, fix bad formatting, and so on... I am then describing below the errors or inconveniences I could face with this data, and how to solve them.
 
-### a/ Missing/invalid category value
+### a/ Useless feature deletion
 
-In the dataset I am handling here, the Category feature of my data can take normal values, or values that look like **missing/invalid information**. I need to clean them up and consider them as a single and same value representing the notion of "missing category" (`missing_value_as_special_category`).
+There is a feature in my dataset that I voluntarily created and called `Useless`. Sometimes, it happens there are a few **useless features** that do not bring anything more to the data, or that do not contain any further and pertinent information. These features can be easily deleted from the dataset in the cleaning process (`useless_feature_deletion`).
+
+### b/ Missing/invalid category value
+
+In the dataset I am handling here, the `Category` feature of my data can take normal values, or values that look like **missing/invalid information**. I need to clean them up and consider them as a single and same value representing the notion of "missing category" (`missing_value_as_special_category`).
 
 ## 3) Dataset transformation
 
@@ -29,7 +33,7 @@ In the dataset I am handling here, the Category feature of my data can take norm
 1. Handling missing values  
    - Deletion
      - [ ] Deleting useless observations (name : `useless_observation_deletion`)
-     - [ ] Deleting useless features (missing : `useless_feature_deletion`)
+     - [x] Deleting useless features (missing : `useless_feature_deletion`)
    - Completion
      - Categorical
        - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
