@@ -5,9 +5,16 @@ The following code in written in Python and mainly uses [Pandas](https://pandas.
 
 ## 1) Dataset generation
 
-In order to show a few Data Cleaning techniques, I needed to find a *"messy"* dataset, but messy in the way I could apply all the cleaning methods I wanted, while being sure I could show all of them, and explain them in an understandable way. Thus, I tried to look for an appropriate dataset but I couldn't find one of my taste. Therefore, I decided to **create my own dataset**, combining randomly generated elements with randomly introduced errors inside it.
+In order to show a few Data Cleaning techniques, I needed to find a *"messy"* dataset, but messy in the way I could apply all the cleaning methods I wanted, while being sure I could show all of them, and explain them in an understandable way. Thus, I tried to look for an appropriate dataset but I could not find one of my taste. Therefore, I decided to **create my own dataset**, combining randomly generated elements with randomly introduced errors inside it.
 
-## 2) Data cleaning pipeline
+Here is a subset of my randomly generated messy dataset, with its set of inherent problems :
+![Initial messy dataset](images/initial_messy_dataset.png)
+
+As you can see in this portion of the dataset, there are simply a lot of problems, missing values, wrong formats, useless data, etc. Thus I am going to use this awful dataset to illustrate some methods in my Data Cleaning process to cleanse it, and make it more appropriate for further use.
+
+## 2) Data Cleaning pipeline
+
+My Data Cleaning pipeline will consist in a tenth or less steps to mainly : delete useless observations or features, consider missing values differently, fill numerical features with the mean or the median of the corresponding feature, correct spelling mistakes, fix bad formatting, and so on... I am then describing below the errors or inconveniences I could face with this data, and how to solve them.
 
 ## 3) Dataset transformation
 
@@ -15,41 +22,20 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
 
 ### TODO list
 
-1. Dataset generation
-   - Normal data
-     - [x] Create name column
-     - [x] Create missing column
-     - [x] Create category column
-     - [x] Create height column
-     - [x] Create salary column
-     - [x] Create date column
-     - [x] Create country column
-     - [x] Create email column
-     - [x] Create useless column
-   - Errors introduction
-     - [x] Generate null values in name column (`useless_observation_deletion`)
-     - [x] Generate lots of missing values in missing column (`useless_feature_deletion`)
-     - [x] Generate null values in category column (`missing_value_as_special_category`)
-     - [x] Generate null values in height column (`mean_value_filling`)
-     - [x] Generate null values in very heterogeneous salary column (`median_value_filling`)
-     - [x] Generate strangely formatted values in date column (`good_format_spelling_correction`)
-     - [x] Generate miswritten country names in country column (`known_value_spelling_correction`)
-     - [x] Generate strange email suffixes in email column (`strange_observation_deletion`)
-     - [x] Generate randomly generated text sequence in useless column (`strange_feature_deletion`)
-2. Handling missing values  
+1. Handling missing values  
    - Deletion
-     - [ ] Deleting useless observations
-     - [ ] Deleting useless features
+     - [ ] Deleting useless observations (name : `useless_observation_deletion`)
+     - [ ] Deleting useless features (missing : `useless_feature_deletion`)
    - Completion
      - Categorical
-       - [ ] Treating missing values as a special category
+       - [ ] Treating missing values as a special category (category : `missing_value_as_special_category`)
      - Numerical
-       - [ ] Filling with feature mean value
-       - [ ] Filling with feature median value
-3. Handling erroneous values
+       - [ ] Filling with feature mean value (height : `mean_value_filling`)
+       - [ ] Filling with feature median value (salary : `median_value_filling`)
+2. Handling erroneous values
    - Spelling errors
-     - [ ] Fixing with well formatted values
-     - [ ] Fixing with known correct values
+     - [ ] Fixing with well formatted values (date : `good_format_spelling_correction`)
+     - [ ] Fixing with known correct values (country : `known_value_spelling_correction`)
    - Value errors
-     - [ ] Deleting strange observations
-     - [ ] Deleting strange features
+     - [ ] Deleting strange observations (email : `strange_observation_deletion`)
+     - [ ] Deleting strange features (useless : `strange_feature_deletion`)
