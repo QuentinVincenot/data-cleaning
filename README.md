@@ -16,6 +16,10 @@ As you can see in this portion of the dataset, there are simply a lot of problem
 
 My Data Cleaning pipeline will consist in a tenth or less steps to mainly : delete useless observations or features, consider missing values differently, fill numerical features with the mean or the median of the corresponding feature, correct spelling mistakes, fix bad formatting, and so on... I am then describing below the errors or inconveniences I could face with this data, and how to solve them.
 
+### a/ Missing/invalid category value
+
+In the dataset I am handling here, the Category feature of my data can take normal values, or values that look like **missing/invalid information**. I need to clean them up and consider them as a single and same value representing the notion of "missing category" (`missing_value_as_special_category`).
+
 ## 3) Dataset transformation
 
 ---
@@ -28,7 +32,7 @@ My Data Cleaning pipeline will consist in a tenth or less steps to mainly : dele
      - [ ] Deleting useless features (missing : `useless_feature_deletion`)
    - Completion
      - Categorical
-       - [ ] Treating missing values as a special category (category : `missing_value_as_special_category`)
+       - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
      - Numerical
        - [ ] Filling with feature mean value (height : `mean_value_filling`)
        - [ ] Filling with feature median value (salary : `median_value_filling`)
@@ -39,3 +43,5 @@ My Data Cleaning pipeline will consist in a tenth or less steps to mainly : dele
    - Value errors
      - [ ] Deleting strange observations (email : `strange_observation_deletion`)
      - [ ] Deleting strange features (useless : `strange_feature_deletion`)
+3. Refactoring
+   - [ ] Create a dedicated file to agregate Data Cleaning methods
