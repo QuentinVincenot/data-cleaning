@@ -17,7 +17,7 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
 
 1. Dataset generation
    - Normal data
-     - [ ] Create name column
+     - [x] Create name column
      - [x] Create missing column
      - [x] Create category column
      - [x] Create height column
@@ -27,12 +27,12 @@ In order to show a few Data Cleaning techniques, I needed to find a *"messy"* da
      - [x] Create email column
      - [x] Create useless column
    - Errors introduction
-     - [ ] Generate null values in name column (`useless_observation_deletion`)
+     - [x] Generate null values in name column (`useless_observation_deletion`)
      - [x] Generate lots of missing values in missing column (`useless_feature_deletion`)
      - [x] Generate null values in category column (`missing_value_as_special_category`)
      - [x] Generate null values in height column (`mean_value_filling`)
      - [x] Generate null values in very heterogeneous salary column (`median_value_filling`)
-     - [ ] Generate strangely formatted values in date column (`good_format_spelling_correction`)
+     - [x] Generate strangely formatted values in date column (`good_format_spelling_correction`)
      - [x] Generate miswritten country names in country column (`known_value_spelling_correction`)
      - [x] Generate strange email suffixes in email column (`strange_observation_deletion`)
      - [x] Generate randomly generated text sequence in useless column (`strange_feature_deletion`)

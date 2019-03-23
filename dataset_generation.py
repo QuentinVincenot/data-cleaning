@@ -14,8 +14,8 @@ def generate_dataset():
 	introduce_error_height_NaN(dataframe)
 	generate_salary_column(dataframe)
 	introduce_error_salary_heterogeneous(dataframe)
-	generate_date_column(dataframe)
-	introduce_error_date_NaN(dataframe)
+	dates_array = introduce_error_date(dataframe)
+	generate_date_column(dataframe, dates_array)
 	countries, probas = introduce_error_country()
 	generate_country_column(dataframe, countries, probas)
 	suffixes, probas = introduce_error_email()
@@ -40,8 +40,8 @@ def generate_height_column(dataframe):
 def generate_salary_column(dataframe):
 	dataframe["Salary"] = np.multiply(1000, np.random.randint(low=30, high=145, size=50))
 
-def generate_date_column(dataframe):
-	dataframe["Date"] = np.random.randint(low=1950, high=2020, size=50)
+def generate_date_column(dataframe, dates_array):
+	dataframe["Date"] = dates_array
 
 def generate_country_column(dataframe, countries, probas):
 	dataframe["Country"] = np.random.choice(countries, 50, p=probas)
