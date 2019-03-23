@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 
+def introduce_error_name_NaN(dataframe):
+	errors_indices = np.random.choice(50, 20, replace=False)
+	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Name')]] = np.nan
+
 def introduce_error_missing_NaN(dataframe):
 	errors_indices = np.random.choice(50, 38, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Missing')]] = np.nan

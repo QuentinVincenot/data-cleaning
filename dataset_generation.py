@@ -4,6 +4,8 @@ import string
 
 def generate_dataset():
 	dataframe = pd.DataFrame()
+	generate_name_column(dataframe)
+	introduce_error_name_NaN(dataframe)
 	generate_missing_column(dataframe)
 	introduce_error_missing_NaN(dataframe)
 	generate_category_column(dataframe)
@@ -20,6 +22,11 @@ def generate_dataset():
 	generate_email_column(dataframe, suffixes, probas)
 	generate_useless_column(dataframe)
 	return dataframe
+
+def generate_name_column(dataframe):
+	most_common_names = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth',
+		'David', 'Barbara', 'Richard', 'Susan', 'Joseph', 'Jessica', 'Thomas', 'Sarah', 'Charles', 'Margaret']
+	dataframe["Name"] = np.random.choice(most_common_names, 50)
 
 def generate_missing_column(dataframe):
 	dataframe["Missing"] = np.random.randint(low=0, high=100, size=50)
