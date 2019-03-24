@@ -28,6 +28,8 @@ My Data Cleaning pipeline will consist in a tenth or less steps to mainly : dele
 
 There is a feature in my dataset that I voluntarily created and called `Strange`. Sometimes, it happens there are a few **strange features** that do not well understand, you cannot interpret the values in it, you even do not know what the values mean and how they were generated. These features can be deleted to protect yourself against attacks, system penetration or these kind of security problems (`strange_feature_deletion`).
 
+![Strange : Strange feature deletion](images/strange_feature_deletion.png)
+
 ### b/ Missing/invalid category value
 
 In the dataset I am handling here, the `Category` feature of my data can take normal values, or values that look like **missing/invalid information**. I need to clean them up and consider them as a single and same value representing the notion of "missing category" (`missing_value_as_special_category`).
@@ -43,6 +45,8 @@ There are some cases when a feature has pretty homogeneous values but a **few mi
 ### e/ Useless observations deletion
 
 Some feature like `Name` permit to identify data points in the dataset. However, this value can be **missing** soometimes, and analysis that requires identification or relationships are difficult to proceed in these cases. Then, deleting these single observations help you narrow your dataset to only useful information and individuals (`useless_observation_deletion`).
+
+![Name : Useless observations deletion](images/useless_observations_deletion.png)
 
 ### f/ Useless feature deletion
 
