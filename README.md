@@ -32,6 +32,10 @@ The `Country` feature of the dataset contains a certain number of countries. How
 
 There are some cases when a feature has pretty homogeneous values but a **few missing ones**. If this feature is numerical, like my `Height` dataset feature, it can be clever to replace the missing values by the mean of this feature (`mean_value_filling`).
 
+### e/ Useless observations deletion
+
+Some feature like `Name` permit to identify data points in the dataset. However, this value can be **missing** soometimes, and analysis that requires identification or relationships are difficult to proceed in these cases. Then, deleting these single observations help you narrow your dataset to only useful information and individuals (`useless_observation_deletion`).
+
 ## 3) Dataset transformation
 
 ---
@@ -40,7 +44,7 @@ There are some cases when a feature has pretty homogeneous values but a **few mi
 
 1. Handling missing values  
    - Deletion
-     - [ ] Deleting useless observations (name : `useless_observation_deletion`)
+     - [x] Deleting useless observations (name : `useless_observation_deletion`)
      - [ ] Deleting useless features (missing : `useless_feature_deletion`)
    - Completion
      - Categorical
