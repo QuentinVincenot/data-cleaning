@@ -16,9 +16,9 @@ As you can see in this portion of the dataset, there are simply a lot of problem
 
 My Data Cleaning pipeline will consist in a tenth or less steps to mainly : delete useless observations or features, consider missing values differently, fill numerical features with the mean or the median of the corresponding feature, correct spelling mistakes, fix bad formatting, and so on... I am then describing below the errors or inconveniences I could face with this data, and how to solve them.
 
-### a/ Useless feature deletion
+### a/ Strange feature deletion
 
-There is a feature in my dataset that I voluntarily created and called `Useless`. Sometimes, it happens there are a few **useless features** that do not bring anything more to the data, or that do not contain any further and pertinent information. These features can be easily deleted from the dataset in the cleaning process (`useless_feature_deletion`).
+There is a feature in my dataset that I voluntarily created and called `Strange`. Sometimes, it happens there are a few **strange features** that do not well understand, you cannot interpret the values in it, you even do not know what the values mean and how they were generated. These features can be deleted to protect yourself against attacks, system penetration or these kind of security problems (`strange_feature_deletion`).
 
 ### b/ Missing/invalid category value
 
@@ -37,7 +37,7 @@ The `Country` feature of the dataset contains a certain number of countries. How
 1. Handling missing values  
    - Deletion
      - [ ] Deleting useless observations (name : `useless_observation_deletion`)
-     - [x] Deleting useless features (missing : `useless_feature_deletion`)
+     - [ ] Deleting useless features (missing : `useless_feature_deletion`)
    - Completion
      - Categorical
        - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
@@ -50,6 +50,6 @@ The `Country` feature of the dataset contains a certain number of countries. How
      - [x] Fixing with known correct values (country : `known_value_spelling_correction`)
    - Value errors
      - [ ] Deleting strange observations (email : `strange_observation_deletion`)
-     - [ ] Deleting strange features (useless : `strange_feature_deletion`)
+     - [x] Deleting strange features (strange : `strange_feature_deletion`)
 3. Refactoring
    - [ ] Create a dedicated file to agregate Data Cleaning methods

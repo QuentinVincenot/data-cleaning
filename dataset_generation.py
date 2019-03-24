@@ -20,7 +20,7 @@ def generate_dataset():
 	generate_country_column(dataframe, countries, probas)
 	suffixes, probas = introduce_error_email()
 	generate_email_column(dataframe, suffixes, probas)
-	generate_useless_column(dataframe)
+	generate_strange_column(dataframe)
 	return dataframe
 
 def generate_name_column(dataframe):
@@ -56,9 +56,9 @@ def generate_email_column(dataframe, suffixes, probas):
 		email_data_array += [random_data]
 	dataframe["Email"] = email_data_array
 
-def generate_useless_column(dataframe):
-	useless_data_array = []
+def generate_strange_column(dataframe):
+	strange_data_array = []
 	for row in range(50):
 		random_data = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(10)])
-		useless_data_array += [random_data]
-	dataframe["Useless"] = useless_data_array
+		strange_data_array += [random_data]
+	dataframe["Strange"] = strange_data_array
