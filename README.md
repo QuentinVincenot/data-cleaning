@@ -36,6 +36,10 @@ There are some cases when a feature has pretty homogeneous values but a **few mi
 
 Some feature like `Name` permit to identify data points in the dataset. However, this value can be **missing** soometimes, and analysis that requires identification or relationships are difficult to proceed in these cases. Then, deleting these single observations help you narrow your dataset to only useful information and individuals (`useless_observation_deletion`).
 
+### f/ Useless feature deletion
+
+In my dataset, the `Missing` feature voluntarily **lacks a very large amount of data**. Therefore, this feature does not bring any consequent interest to the whole dataset, and the potential analysis that are to be made on it. Deleting this feature will helps analysis to be focused on interesting features only (`useless_feature_deletion`).
+
 ## 3) Dataset transformation
 
 ---
@@ -45,7 +49,7 @@ Some feature like `Name` permit to identify data points in the dataset. However,
 1. Handling missing values  
    - Deletion
      - [x] Deleting useless observations (name : `useless_observation_deletion`)
-     - [ ] Deleting useless features (missing : `useless_feature_deletion`)
+     - [x] Deleting useless features (missing : `useless_feature_deletion`)
    - Completion
      - Categorical
        - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
