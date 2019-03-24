@@ -46,6 +46,8 @@ The `Country` feature of the dataset contains a certain number of countries. How
 
 There are some cases when a feature has pretty homogeneous values but a **few missing ones**. If this feature is numerical, like my `Height` dataset feature, it can be clever to replace the missing values by the mean of this feature (`mean_value_filling`).
 
+![Height : Mean filling missing values](images/mean_filling_value.png)
+
 ### e/ Useless observations deletion
 
 Some feature like `Name` permit to identify data points in the dataset. However, this value can be **missing** soometimes, and analysis that requires identification or relationships are difficult to proceed in these cases. Then, deleting these single observations help you narrow your dataset to only useful information and individuals (`useless_observation_deletion`).
@@ -61,6 +63,8 @@ In my dataset, the `Missing` feature voluntarily **lacks a very large amount of 
 ### g/ Median filling for erroneous values
 
 A specific feature `Salary` has been enhanced with a few **outliers** that could perturbate analysis. For this numerical feature, it can be interesting to replace these outliers with the median of the feature, to analyse data further on without getting wrong on the whole dataset interpretations (`median_value_filling`).
+
+![Salary : Median filling for erroneous values](images/median_filling_value.png)
 
 ### h/ Wrongly formatted dates
 
@@ -80,7 +84,7 @@ Sometimes, there are some features that contain very strange information, and **
 
 1. Presentation
    - [x] Add global visual image (boxes and types/colors) of each methods used in the repository
-   - [ ] Add images before/after each Data Cleaning methods in README
+   - [x] Add images before/after each Data Cleaning methods in README
 2. Refactoring
    - [ ] Create a dedicated file to agregate Data Cleaning methods
    - [ ] Add comments in dataset generation and errors generation modules
