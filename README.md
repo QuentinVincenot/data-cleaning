@@ -52,6 +52,8 @@ Some feature like `Name` permit to identify data points in the dataset. However,
 
 In my dataset, the `Missing` feature voluntarily **lacks a very large amount of data**. Therefore, this feature does not bring any consequent interest to the whole dataset, and the potential analysis that are to be made on it. Deleting this feature will helps analysis to be focused on interesting features only (`useless_feature_deletion`).
 
+![Missing : Useless feature deletion](images/useless_feature_deletion.png)
+
 ### g/ Median filling for erroneous values
 
 A specific feature `Salary` has been enhanced with a few **outliers** that could perturbate analysis. For this numerical feature, it can be interesting to replace these outliers with the median of the feature, to analyse data further on without getting wrong on the whole dataset interpretations (`median_value_filling`).
@@ -60,13 +62,13 @@ A specific feature `Salary` has been enhanced with a few **outliers** that could
 
 There are numerous cases where dates and **wrongly formatted** accross datasets, and I made the voluntary mistake in mine on the `Date` feature. Dates shall always, and absolutely, have a consistent format throughout the dataset in order to be analysed properly (`good_format_spelling_correction`).
 
-![Date : Wrongly formatted dates](wrongly_formatted_dates.png)
+![Date : Wrongly formatted dates](images/wrongly_formatted_dates.png)
 
 ### i/ Strange observations deletion
 
 Sometimes, there are some features that contain very strange information, and **Email** is often a good aim. This could come from potentially harmful users, systems or interactions with our dataset, and we want to be able to filter out these information in the best manner, usually by deleting suspect observations (`strange_observation_deletion`).
 
-![Email : Strange observations deletion](strange_observations_deletion.png)
+![Email : Strange observations deletion](images/strange_observations_deletion.png)
 
 ---
 
