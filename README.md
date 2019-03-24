@@ -34,9 +34,13 @@ There is a feature in my dataset that I voluntarily created and called `Strange`
 
 In the dataset I am handling here, the `Category` feature of my data can take normal values, or values that look like **missing/invalid information**. I need to clean them up and consider them as a single and same value representing the notion of "missing category" (`missing_value_as_special_category`).
 
+![Category : Missing/invalid category value](images/missing_category_value.png)
+
 ### c/ Misspelled values
 
 The `Country` feature of the dataset contains a certain number of countries. However, a few of them are sometimes **misspelled**. Uniformisation of the values is an important step because it will protect you against wrong interpretations in your future data analysis step (`known_value_spelling_correction`).
+
+![Country : Misspelled values](images/misspelled_values.png)
 
 ### d/ Mean filling missing values
 
