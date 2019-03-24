@@ -24,6 +24,10 @@ There is a feature in my dataset that I voluntarily created and called `Useless`
 
 In the dataset I am handling here, the `Category` feature of my data can take normal values, or values that look like **missing/invalid information**. I need to clean them up and consider them as a single and same value representing the notion of "missing category" (`missing_value_as_special_category`).
 
+### c/ Misspelled values
+
+The `Country` feature of the dataset contains a certain number of countries. However, a few of them are sometimes **misspelled**. Uniformisation of the values is an important step because it will protect you against wrong interpretations in your future data analysis step (`known_value_spelling_correction`).
+
 ## 3) Dataset transformation
 
 ---
@@ -43,7 +47,7 @@ In the dataset I am handling here, the `Category` feature of my data can take no
 2. Handling erroneous values
    - Spelling errors
      - [ ] Fixing with well formatted values (date : `good_format_spelling_correction`)
-     - [ ] Fixing with known correct values (country : `known_value_spelling_correction`)
+     - [x] Fixing with known correct values (country : `known_value_spelling_correction`)
    - Value errors
      - [ ] Deleting strange observations (email : `strange_observation_deletion`)
      - [ ] Deleting strange features (useless : `strange_feature_deletion`)
