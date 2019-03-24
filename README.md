@@ -60,9 +60,13 @@ A specific feature `Salary` has been enhanced with a few **outliers** that could
 
 There are numerous cases where dates and **wrongly formatted** accross datasets, and I made the voluntary mistake in mine on the `Date` feature. Dates shall always, and absolutely, have a consistent format throughout the dataset in order to be analysed properly (`good_format_spelling_correction`).
 
+![Date : Wrongly formatted dates](wrongly_formatted_dates.png)
+
 ### i/ Strange observations deletion
 
 Sometimes, there are some features that contain very strange information, and **Email** is often a good aim. This could come from potentially harmful users, systems or interactions with our dataset, and we want to be able to filter out these information in the best manner, usually by deleting suspect observations (`strange_observation_deletion`).
+
+![Email : Strange observations deletion](strange_observations_deletion.png)
 
 ---
 
