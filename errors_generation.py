@@ -1,33 +1,33 @@
 import pandas as pd
 import numpy as np
 
-def introduce_error_name_NaN(dataframe):
-	errors_indices = np.random.choice(50, 20, replace=False)
+def introduce_error_name_NaN(dataframe, length):
+	errors_indices = np.random.choice(length, 20, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Name')]] = np.nan
 
-def introduce_error_missing_NaN(dataframe):
-	errors_indices = np.random.choice(50, 38, replace=False)
+def introduce_error_missing_NaN(dataframe, length):
+	errors_indices = np.random.choice(length, 38, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Missing')]] = np.nan
 
-def introduce_error_category_null_values(dataframe):
-	errors_indices = np.random.choice(50, 12, replace=False)
+def introduce_error_category_null_values(dataframe, length):
+	errors_indices = np.random.choice(length, 12, replace=False)
 	for index in errors_indices:
 		dataframe.iloc[index, [dataframe.columns.get_loc('Category')]] = np.random.choice(['NaN', 'null', '???', 'UNKWN'], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
 
-def introduce_error_height_NaN(dataframe):
-	errors_indices = np.random.choice(50, 7, replace=False)
+def introduce_error_height_NaN(dataframe, length):
+	errors_indices = np.random.choice(length, 7, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Height')]] = np.nan
 
-def introduce_error_salary_heterogeneous(dataframe):
-	errors_indices = np.random.choice(50, 3, replace=False)
+def introduce_error_salary_heterogeneous(dataframe, length):
+	errors_indices = np.random.choice(length, 3, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Salary')]] = np.multiply(1000, np.random.randint(low=450, high=500, size=3))
 
-def introduce_error_date(dataframe):
-	years = np.random.randint(low=1950, high=2020, size=50)
-	months = np.random.randint(low=1, high=12, size=50)
-	days = np.random.randint(low=1, high=30, size=50)
+def introduce_error_date(dataframe, length):
+	years = np.random.randint(low=1950, high=2020, size=length)
+	months = np.random.randint(low=1, high=12, size=length)
+	days = np.random.randint(low=1, high=30, size=length)
 	dates_array = []
-	for i in range(50):
+	for i in range(length):
 		date_string = '{} {}-{}'.format(months[i], years[i], days[i])
 		dates_array += [date_string]
 	return dates_array
