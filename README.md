@@ -12,7 +12,11 @@ Here is a subset of my randomly generated messy dataset, with its set of inheren
 
 As you can see in this portion of the dataset, there are simply a lot of problems, missing values, wrong formats, useless data, etc. Thus I am going to use this awful dataset to illustrate some methods in my Data Cleaning process to cleanse it, and make it more appropriate for further use.
 
-## 2) Data Cleaning pipeline
+## 2) Dataset transformation
+
+`Coming soon...`
+
+## 3) Data Cleaning pipeline
 
 My Data Cleaning pipeline will consist in a tenth or less steps to mainly : delete useless observations or features, consider missing values differently, fill numerical features with the mean or the median of the corresponding feature, correct spelling mistakes, fix bad formatting, and so on... I am then describing below the errors or inconveniences I could face with this data, and how to solve them.
 
@@ -52,28 +56,14 @@ There are numerous cases where dates and **wrongly formatted** accross datasets,
 
 Sometimes, there are some features that contain very strange information, and **Email** is often a good aim. This could come from potentially harmful users, systems or interactions with our dataset, and we want to be able to filter out these information in the best manner, usually by deleting suspect observations (`strange_observation_deletion`).
 
-## 3) Dataset transformation
-
 ---
 
-### TODO list
+### ROADMAP
 
-1. Handling missing values  
-   - Deletion
-     - [x] Deleting useless observations (name : `useless_observation_deletion`)
-     - [x] Deleting useless features (missing : `useless_feature_deletion`)
-   - Completion
-     - Categorical
-       - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
-     - Numerical
-       - [x] Filling with feature mean value (height : `mean_value_filling`)
-       - [x] Filling with feature median value (salary : `median_value_filling`)
-2. Handling erroneous values
-   - Spelling errors
-     - [x] Fixing with well formatted values (date : `good_format_spelling_correction`)
-     - [x] Fixing with known correct values (country : `known_value_spelling_correction`)
-   - Value errors
-     - [x] Deleting strange observations (email : `strange_observation_deletion`)
-     - [x] Deleting strange features (strange : `strange_feature_deletion`)
-3. Refactoring
+1. Presentation
+   - [ ] Add global visual image (boxes and types/colors) of each methods used in the repository
+   - [ ] Add images before/after each Data Cleaning methods in README
+2. Refactoring
    - [ ] Create a dedicated file to agregate Data Cleaning methods
+   - [ ] Add comments in dataset generation and errors generation modules
+   - [ ] Add introduction and notebook formatting
