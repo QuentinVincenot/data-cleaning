@@ -31,7 +31,7 @@ def introduce_error_salary_heterogeneous(dataframe, length, salary_errors):
 def introduce_error_date(dataframe, length):
 	years = np.random.randint(low=1950, high=2020, size=length)
 	months = np.random.randint(low=1, high=12, size=length)
-	days = np.random.randint(low=1, high=30, size=length)
+	days = np.random.randint(low=1, high=28, size=length)
 	dates_array = []
 	for i in range(length):
 		date_string = '{} {}-{}'.format(months[i], years[i], days[i])

@@ -65,9 +65,11 @@ Sometimes, there are some features that contain very strange information, and **
 ### ROADMAP
 
 1. Presentation
-   - [ ] Add global visual image (boxes and types/colors) of each methods used in the repository
+   - [x] Add global visual image (boxes and types/colors) of each methods used in the repository
    - [ ] Add images before/after each Data Cleaning methods in README
 2. Refactoring
    - [ ] Create a dedicated file to agregate Data Cleaning methods
    - [ ] Add comments in dataset generation and errors generation modules
-   - [ ] Add introduction and notebook formatting
+   - [x] Add notebook introduction
+   - [ ] Add notebook explanations, texts and formatting
+   - [ ] Add notebook conclusion and Data Cleaning conclusion
