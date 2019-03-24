@@ -14,7 +14,11 @@ As you can see in this portion of the dataset, there are simply a lot of problem
 
 ## 2) Dataset transformation
 
-`Coming soon...`
+Here are all the methods I used to work on this dataset. I tried to cluster them with colors depending whether they are **deletion**, **filling** or **fixing** methods.
+
+The exhaustive list of methods, that you can see in the image below, is the following : `strange_feature_deletion`, `missing_value_as_special_category`, `known_value_spelling_correction`, `mean_value_filling`, `useless_observation_deletion`, `useless_feature_deletion`, `median_value_filling`, `good_format_spelling_correction`, and `strange_observation_deletion`.
+
+![Data Cleaning methods](images/data_cleaning_methods.png)
 
 ## 3) Data Cleaning pipeline
 
