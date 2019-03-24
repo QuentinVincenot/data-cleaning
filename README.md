@@ -28,6 +28,10 @@ In the dataset I am handling here, the `Category` feature of my data can take no
 
 The `Country` feature of the dataset contains a certain number of countries. However, a few of them are sometimes **misspelled**. Uniformisation of the values is an important step because it will protect you against wrong interpretations in your future data analysis step (`known_value_spelling_correction`).
 
+### d/ Mean filling missing values
+
+There are some cases when a feature has pretty homogeneous values but a **few missing ones**. If this feature is numerical, like my `Height` dataset feature, it can be clever to replace the missing values by the mean of this feature (`mean_value_filling`).
+
 ## 3) Dataset transformation
 
 ---
@@ -42,7 +46,7 @@ The `Country` feature of the dataset contains a certain number of countries. How
      - Categorical
        - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
      - Numerical
-       - [ ] Filling with feature mean value (height : `mean_value_filling`)
+       - [x] Filling with feature mean value (height : `mean_value_filling`)
        - [ ] Filling with feature median value (salary : `median_value_filling`)
 2. Handling erroneous values
    - Spelling errors
