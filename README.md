@@ -40,6 +40,10 @@ Some feature like `Name` permit to identify data points in the dataset. However,
 
 In my dataset, the `Missing` feature voluntarily **lacks a very large amount of data**. Therefore, this feature does not bring any consequent interest to the whole dataset, and the potential analysis that are to be made on it. Deleting this feature will helps analysis to be focused on interesting features only (`useless_feature_deletion`).
 
+### g/ Median filling for erroneous values
+
+A specific feature `Salary` has been enhanced with a few **outliers** that could perturbate analysis. For this numerical feature, it can be interesting to replace these outliers with the median of the feature, to analyse data further on without getting wrong on the whole dataset interpretations (`median_value_filling`).
+
 ## 3) Dataset transformation
 
 ---
@@ -55,7 +59,7 @@ In my dataset, the `Missing` feature voluntarily **lacks a very large amount of 
        - [x] Treating missing values as a special category (category : `missing_value_as_special_category`)
      - Numerical
        - [x] Filling with feature mean value (height : `mean_value_filling`)
-       - [ ] Filling with feature median value (salary : `median_value_filling`)
+       - [x] Filling with feature median value (salary : `median_value_filling`)
 2. Handling erroneous values
    - Spelling errors
      - [ ] Fixing with well formatted values (date : `good_format_spelling_correction`)
