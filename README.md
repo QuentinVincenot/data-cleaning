@@ -44,6 +44,10 @@ In my dataset, the `Missing` feature voluntarily **lacks a very large amount of 
 
 A specific feature `Salary` has been enhanced with a few **outliers** that could perturbate analysis. For this numerical feature, it can be interesting to replace these outliers with the median of the feature, to analyse data further on without getting wrong on the whole dataset interpretations (`median_value_filling`).
 
+### h/ Wrongly formatted dates
+
+There are numerous cases where dates and **wrongly formatted** accross datasets, and I made the voluntary mistake in mine on the `Date` feature. Dates shall always, and absolutely, have a consistent format throughout the dataset in order to be analysed properly (`good_format_spelling_correction`).
+
 ## 3) Dataset transformation
 
 ---
@@ -62,7 +66,7 @@ A specific feature `Salary` has been enhanced with a few **outliers** that could
        - [x] Filling with feature median value (salary : `median_value_filling`)
 2. Handling erroneous values
    - Spelling errors
-     - [ ] Fixing with well formatted values (date : `good_format_spelling_correction`)
+     - [x] Fixing with well formatted values (date : `good_format_spelling_correction`)
      - [x] Fixing with known correct values (country : `known_value_spelling_correction`)
    - Value errors
      - [ ] Deleting strange observations (email : `strange_observation_deletion`)
