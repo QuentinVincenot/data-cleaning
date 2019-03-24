@@ -2,18 +2,26 @@ from errors_generation import *
 import random
 import string
 
-def generate_dataset(length=50):
+DEFAULT_DATASET_LENGTH = 50
+DEFAULT_NAME_ERRORS = 0.2
+DEFAULT_MISSING_ERRORS = 0.8
+DEFAULT_CATEGORY_ERRORS = 0.25
+DEFAULT_HEIGHT_ERRORS = 0.15
+DEFAULT_SALARY_ERRORS = 0.07
+
+def generate_dataset(length=DEFAULT_DATASET_LENGTH, name_errors=DEFAULT_NAME_ERRORS, missing_errors=DEFAULT_MISSING_ERRORS, category_errors=DEFAULT_CATEGORY_ERRORS,
+	height_errors=DEFAULT_HEIGHT_ERRORS, salary_errors=DEFAULT_SALARY_ERRORS):
 	dataframe = pd.DataFrame()
 	generate_name_column(dataframe, length)
-	introduce_error_name_NaN(dataframe, length)
+	introduce_error_name_NaN(dataframe, length, name_errors)
 	generate_missing_column(dataframe, length)
-	introduce_error_missing_NaN(dataframe, length)
+	introduce_error_missing_NaN(dataframe, length, missing_errors)
 	generate_category_column(dataframe, length)
-	introduce_error_category_null_values(dataframe, length)
+	introduce_error_category_null_values(dataframe, length, category_errors)
 	generate_height_column(dataframe, length)
-	introduce_error_height_NaN(dataframe, length)
+	introduce_error_height_NaN(dataframe, length, height_errors)
 	generate_salary_column(dataframe, length)
-	introduce_error_salary_heterogeneous(dataframe, length)
+	introduce_error_salary_heterogeneous(dataframe, length, salary_errors)
 	dates_array = introduce_error_date(dataframe, length)
 	generate_date_column(dataframe, dates_array)
 	countries, probas = introduce_error_country()

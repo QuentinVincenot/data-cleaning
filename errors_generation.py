@@ -1,26 +1,32 @@
 import pandas as pd
 import numpy as np
+import math
 
-def introduce_error_name_NaN(dataframe, length):
-	errors_indices = np.random.choice(length, 20, replace=False)
+def introduce_error_name_NaN(dataframe, length, name_errors):
+	number_of_errors = math.floor(round(name_errors*length, 0))
+	errors_indices = np.random.choice(length, number_of_errors, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Name')]] = np.nan
 
-def introduce_error_missing_NaN(dataframe, length):
-	errors_indices = np.random.choice(length, 38, replace=False)
+def introduce_error_missing_NaN(dataframe, length, missing_errors):
+	number_of_errors = math.floor(round(missing_errors*length, 0))
+	errors_indices = np.random.choice(length, number_of_errors, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Missing')]] = np.nan
 
-def introduce_error_category_null_values(dataframe, length):
-	errors_indices = np.random.choice(length, 12, replace=False)
+def introduce_error_category_null_values(dataframe, length, category_errors):
+	number_of_errors = math.floor(round(category_errors*length, 0))
+	errors_indices = np.random.choice(length, number_of_errors, replace=False)
 	for index in errors_indices:
 		dataframe.iloc[index, [dataframe.columns.get_loc('Category')]] = np.random.choice(['NaN', 'null', '???', 'UNKWN'], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
 
-def introduce_error_height_NaN(dataframe, length):
-	errors_indices = np.random.choice(length, 7, replace=False)
+def introduce_error_height_NaN(dataframe, length, height_errors):
+	number_of_errors = math.floor(round(height_errors*length, 0))
+	errors_indices = np.random.choice(length, number_of_errors, replace=False)
 	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Height')]] = np.nan
 
-def introduce_error_salary_heterogeneous(dataframe, length):
-	errors_indices = np.random.choice(length, 3, replace=False)
-	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Salary')]] = np.multiply(1000, np.random.randint(low=450, high=500, size=3))
+def introduce_error_salary_heterogeneous(dataframe, length, salary_errors):
+	number_of_errors = math.floor(round(salary_errors*length, 0))
+	errors_indices = np.random.choice(length, number_of_errors, replace=False)
+	dataframe.iloc[errors_indices, [dataframe.columns.get_loc('Salary')]] = np.multiply(1000, np.random.randint(low=450, high=500, size=number_of_errors))
 
 def introduce_error_date(dataframe, length):
 	years = np.random.randint(low=1950, high=2020, size=length)
